@@ -9,7 +9,7 @@ class AutorViewSet(viewsets.ModelViewSet):
     queryset = Autor.objects.all()
     serializer_class = autorSerializer
   
-    @action(detail=True, methods=['post'],url_path='agregar_libro')
+    @action(detail=True, methods=['post'],url_path='agregar_libro') #api/agregar_libro/
     def agregar_libro(self, request, pk=None):
         autor = self.get_object()
         serializer = libroSerializer(data=request.data)
